@@ -10,5 +10,10 @@ namespace E_Commerce_API.Specifications
             AddIncludes(p=>p.ProductType);
             AddIncludes(p=>p.ProductBrand);
         }
+        public ProductWithTypesAndBrandsSpesification(int id) :base(x=>x.Id == id)
+        {
+            AddIncludes(p => p.ProductType);
+            AddIncludes(p => p.ProductBrand);
+        }
     }
 }

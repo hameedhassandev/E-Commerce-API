@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "0vbaf+zXS+nXs/zOnFYJjCZN5Ebb1rAy0HkNOJ1a/Ms=",
+  "Hash": "TKB0Y9/s6UFT2tAJKE5Uaonkwa/LZxKReIjN1FDJcSY=",
   "Source": "E-Commerce-API",
   "BasePath": "_content/E-Commerce-API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "E-Commerce-API\\wwwroot",
+      "Source": "E-Commerce-API",
+      "ContentRoot": "D:\\csharpcode\\E-Commerce-API\\E-Commerce-API\\wwwroot\\",
+      "BasePath": "_content/E-Commerce-API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\csharpcode\\E-Commerce-API\\E-Commerce-API\\wwwroot\\images\\i1.PNG",
+      "SourceId": "E-Commerce-API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\csharpcode\\E-Commerce-API\\E-Commerce-API\\wwwroot\\",
+      "BasePath": "_content/E-Commerce-API",
+      "RelativePath": "images/i1.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\i1.PNG"
+    },
+    {
+      "Identity": "D:\\csharpcode\\E-Commerce-API\\E-Commerce-API\\wwwroot\\images\\I2.PNG",
+      "SourceId": "E-Commerce-API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\csharpcode\\E-Commerce-API\\E-Commerce-API\\wwwroot\\",
+      "BasePath": "_content/E-Commerce-API",
+      "RelativePath": "images/I2.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\I2.PNG"
+    }
+  ]
 }

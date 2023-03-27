@@ -1,4 +1,6 @@
-﻿using E_Commerce_API.Entities;
+﻿using AutoMapper;
+using E_Commerce_API.DTOS;
+using E_Commerce_API.Entities;
 using E_Commerce_API.Interfaces;
 using E_Commerce_API.Services;
 using E_Commerce_API.Specifications;
@@ -14,12 +16,15 @@ namespace E_Commerce_API.Controllers
         private readonly IGenericRepository<Product> _productRepository;
         private readonly IGenericRepository<ProductBrand> _productBrandRepository;
         private readonly IGenericRepository<ProductType> _productTypeRepository;
+        private readonly IMapper _mapper;
         public ProductController(IGenericRepository<Product> productRepository
-            , IGenericRepository<ProductBrand> productBrandRepository, IGenericRepository<ProductType> productTypeRepository)
+            , IGenericRepository<ProductBrand> productBrandRepository, 
+            IGenericRepository<ProductType> productTypeRepository, IMapper mapper)
         {
             _productRepository = productRepository;   
             _productBrandRepository = productBrandRepository;   
-            _productTypeRepository = productTypeRepository; 
+            _productTypeRepository = productTypeRepository;
+            _mapper = mapper;
         }
 
         [HttpGet("GetAllProducts")]
@@ -27,15 +32,18 @@ namespace E_Commerce_API.Controllers
         {
             var specification = new ProductWithTypesAndBrandsSpesification();
             var products = await _productRepository.ListAsync(specification);
-            return Ok(products);
+            var results = _mapper.Map<IReadOnlyList<ProductDto>>(products);
+            return Ok(results);
         }
 
         [HttpGet("GetProduct/{id}")]
         public async Task<IActionResult> GetProduct(int id)
         {
-            var product = await _productRepository.GetByIdAsync(id);
+            var specification = new ProductWithTypesAndBrandsSpesification(id);
+            var product = await _productRepository.GetEntityWithSpecification(specification);
             if(product == null) return NotFound();
-            return Ok(product);
+            var result = _mapper.Map<ProductDto>(product);
+            return Ok(result);
         }
 
 
