@@ -28,9 +28,9 @@ namespace E_Commerce_API.Controllers
         }
 
         [HttpGet("GetAllProducts")]
-        public async Task<IActionResult> GetAllProducts()
+        public async Task<IActionResult> GetAllProducts([FromQuery]ProductSpecificationParams ProductParams)
         {
-            var specification = new ProductWithTypesAndBrandsSpesification();
+            var specification = new ProductWithTypesAndBrandsSpesification(ProductParams);
             var products = await _productRepository.ListAsync(specification);
             var results = _mapper.Map<IReadOnlyList<ProductDto>>(products);
             return Ok(results);
