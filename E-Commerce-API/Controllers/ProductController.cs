@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using E_Commerce_API.DTOS;
 using E_Commerce_API.Entities;
+using E_Commerce_API.Helpers;
 using E_Commerce_API.Interfaces;
 using E_Commerce_API.Services;
 using E_Commerce_API.Specifications;
@@ -31,9 +32,11 @@ namespace E_Commerce_API.Controllers
         public async Task<IActionResult> GetAllProducts([FromQuery]ProductSpecificationParams ProductParams)
         {
             var specification = new ProductWithTypesAndBrandsSpesification(ProductParams);
+            var countSpecification = new ProductWithCountSpecification(ProductParams);
+            var totalItems = await _productRepository.CountAsync(countSpecification);
             var products = await _productRepository.ListAsync(specification);
             var results = _mapper.Map<IReadOnlyList<ProductDto>>(products);
-            return Ok(results);
+            return Ok(new Pagination<ProductDto>(ProductParams.PageIndex,ProductParams.PageSize,totalItems,results));
         }
 
         [HttpGet("GetProduct/{id}")]

@@ -6,7 +6,9 @@ namespace E_Commerce_API.Specifications
     public class ProductWithTypesAndBrandsSpesification : BaseSpecification<Product>
     {
         public ProductWithTypesAndBrandsSpesification(ProductSpecificationParams ProductParams)
-            : base(p=>(!ProductParams.BrandId.HasValue || p.ProductTypeId == ProductParams.BrandId) &&
+            : base(p=>
+                      (string.IsNullOrEmpty(ProductParams.Search) || p.Name.ToLower().Contains(ProductParams.Search)) &&
+                      (!ProductParams.BrandId.HasValue || p.ProductTypeId == ProductParams.BrandId) &&
                       (!ProductParams.TypeId.HasValue || p.ProductTypeId == ProductParams.BrandId))
         {
             AddIncludes(p=>p.ProductType);

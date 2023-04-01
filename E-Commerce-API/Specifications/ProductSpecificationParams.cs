@@ -12,9 +12,15 @@
             set { _pageSize = (value > MaxPageSize)?MaxPageSize : value; }
 
         }
+        private string _search;
 
         public int? BrandId { get; set; }
         public int? TypeId { get; set; }
         public string Sort { get; set; }
+        public string Search 
+        {
+            get { return _search; }
+            set { _search = value.ToLower(); }    
+        }
     }
 }

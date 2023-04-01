@@ -42,7 +42,7 @@ namespace E_Commerce_API.Specifications
             OrderByDesc = orderByExpDesc;
         }
 
-        protected void ApplayPaging(int take, int skip)
+        protected void ApplayPaging(int skip, int take)
         {
             Skip = skip;
             Take = take;
