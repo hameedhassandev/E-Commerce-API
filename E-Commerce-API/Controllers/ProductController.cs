@@ -29,7 +29,7 @@ namespace E_Commerce_API.Controllers
         }
 
         [HttpGet("GetAllProducts")]
-        public async Task<IActionResult> GetAllProducts([FromQuery]ProductSpecificationParams ProductParams)
+        public async Task<IActionResult> GetAllProducts([FromQuery] ProductSpecificationParams ProductParams)
         {
             var specification = new ProductWithTypesAndBrandsSpesification(ProductParams);
             var countSpecification = new ProductWithCountSpecification(ProductParams);

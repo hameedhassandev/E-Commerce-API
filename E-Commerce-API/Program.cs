@@ -2,6 +2,7 @@ using E_Commerce_API.Data;
 using E_Commerce_API.Interfaces;
 using E_Commerce_API.Services;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<StoreContext>(options =>
 
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IBasketRipository, BasketRipository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -29,9 +31,17 @@ builder.Services.AddCors(options =>
     {
         policy.AllowAnyHeader()
               .AllowAnyMethod()
-              .WithOrigins("http://localhost:4200/");
+              .AllowAnyOrigin();
     });
 });
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(c =>
+{
+    var options = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"));
+    return ConnectionMultiplexer.Connect(options);
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

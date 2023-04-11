@@ -8,8 +8,8 @@ namespace E_Commerce_API.Specifications
         public ProductWithTypesAndBrandsSpesification(ProductSpecificationParams ProductParams)
             : base(p=>
                       (string.IsNullOrEmpty(ProductParams.Search) || p.Name.ToLower().Contains(ProductParams.Search)) &&
-                      (!ProductParams.BrandId.HasValue || p.ProductTypeId == ProductParams.BrandId) &&
-                      (!ProductParams.TypeId.HasValue || p.ProductTypeId == ProductParams.BrandId))
+                      (!ProductParams.BrandId.HasValue || p.ProductBrandId == ProductParams.BrandId) &&
+                      (!ProductParams.TypeId.HasValue || p.ProductTypeId == ProductParams.TypeId))
         {
             AddIncludes(p=>p.ProductType);
             AddIncludes(p=>p.ProductBrand);

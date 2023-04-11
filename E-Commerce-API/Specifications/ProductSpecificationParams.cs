@@ -16,8 +16,8 @@
 
         public int? BrandId { get; set; }
         public int? TypeId { get; set; }
-        public string Sort { get; set; }
-        public string Search 
+        public string? Sort { get; set; }
+        public string? Search 
         {
             get { return _search; }
             set { _search = value.ToLower(); }    
