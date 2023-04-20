@@ -5,6 +5,7 @@ using E_Commerce_API.Helpers;
 using E_Commerce_API.Interfaces;
 using E_Commerce_API.Services;
 using E_Commerce_API.Specifications;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,6 +29,7 @@ namespace E_Commerce_API.Controllers
             _mapper = mapper;
         }
 
+        
         [HttpGet("GetAllProducts")]
         public async Task<IActionResult> GetAllProducts([FromQuery] ProductSpecificationParams ProductParams)
         {
@@ -51,6 +53,8 @@ namespace E_Commerce_API.Controllers
 
 
         [HttpGet("ProductBrands")]
+        [Authorize]
+
         public async Task<IActionResult> GetProductBrands()
         {
             var productBrands = await _productBrandRepository.GetAllAsync();

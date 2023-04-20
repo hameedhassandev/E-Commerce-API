@@ -4,14 +4,14 @@
     {
         public Basket()
         {
-                
+
         }
 
         public Basket(string id)
         {
-                Id = id;   
+            Id = id;
         }
         public string Id { get; set; }
-        public List<BaskeItem> BaskeItems { get; set; } = new List<BaskeItem>();  
+        public List<BaskeItem> BaskeItems { get; set; } = new List<BaskeItem>();
     }
 } 

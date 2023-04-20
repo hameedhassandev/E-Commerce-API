@@ -5,12 +5,12 @@ using System.Text.Json;
 
 namespace E_Commerce_API.Services
 {
-    public class BasketRipository : IBasketRipository
+    public class BasketRipository
     {
         private readonly IDatabase _db;
         public BasketRipository(IConnectionMultiplexer redis)
         {
-            _db = redis.GetDatabase(); 
+            _db = redis.GetDatabase();
         }
         public async Task<Basket> GetBasketAsync(string basketId)
         {
@@ -27,8 +27,5 @@ namespace E_Commerce_API.Services
         {
             return await _db.KeyDeleteAsync(basketId);
         }
-
-    
-       
     }
-}
+   }

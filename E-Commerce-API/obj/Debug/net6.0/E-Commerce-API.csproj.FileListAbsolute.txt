@@ -86,3 +86,10 @@ D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\AutoMapper.Extensio
 D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\E-Commerce-API.staticwebassets.runtime.json
 D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
 D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\StackExchange.Redis.dll
+D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\csharpcode\E-Commerce-API\E-Commerce-API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

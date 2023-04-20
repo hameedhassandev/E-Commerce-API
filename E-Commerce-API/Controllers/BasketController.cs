@@ -12,7 +12,7 @@ namespace E_Commerce_API.Controllers
         private readonly IBasketRipository _basketRipository;
         public BasketController(IBasketRipository basketRipository)
         {
-            _basketRipository = basketRipository;   
+            _basketRipository = basketRipository;
         }
 
         [HttpGet]
@@ -36,3 +36,4 @@ namespace E_Commerce_API.Controllers
         }
     }
 }
+
