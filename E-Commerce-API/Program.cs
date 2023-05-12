@@ -26,10 +26,15 @@ builder.Services.AddDbContext<StoreContext>(options =>
 
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-//builder.Services.AddScoped<IBasketRipository, BasketRipository>();
+
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddScoped<ITokenService, TokenService>();
+
+
+//builder.Services.AddScoped<IOrderService, OrderService>();
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
