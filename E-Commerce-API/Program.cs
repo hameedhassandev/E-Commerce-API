@@ -31,6 +31,7 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 
+//builder.Services.AddScoped<IPaymentService, PaymentService>();
 
 //builder.Services.AddScoped<IOrderService, OrderService>();
 

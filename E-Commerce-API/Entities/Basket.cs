@@ -13,5 +13,8 @@
         }
         public string Id { get; set; }
         public List<BaskeItem> BaskeItems { get; set; } = new List<BaskeItem>();
+        public int? DeliveryMethodId { get; set; }
+        public string PaymentIntent { get; set; }
+        public string ClientSecret { get; set; }
     }
 } 
